@@ -1,5 +1,7 @@
+/* Importación de fuentes de Samsung */
 @import url('https://fonts.googleapis.com/css2?family=Samsung+Sharp+Sans:wght@400;700&display=swap');
 
+/* Variables globales de colores y estilos */
 :root {
     --samsung-black: #000000;
     --samsung-white: #ffffff;
@@ -7,12 +9,14 @@
     --text-color: #333333;
 }
 
+/* Reset de estilos básicos */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Estilos base del cuerpo del documento */
 body {
     font-family: 'Samsung Sharp Sans', sans-serif;
     background-color: var(--samsung-black);
@@ -20,6 +24,7 @@ body {
     line-height: 1.6;
 }
 
+/* Estilos del encabezado principal */
 .header {
     padding: 2rem;
     text-align: center;
@@ -27,6 +32,7 @@ body {
     margin-bottom: 2rem;
 }
 
+/* Contenedor de logos */
 .logo-container {
     display: flex;
     justify-content: space-between;
@@ -35,11 +41,13 @@ body {
     margin: 0 auto 2rem;
 }
 
+/* Estilos de los logos */
 .samsung-logo, .udem-logo {
     height: 40px;
     object-fit: contain;
 }
 
+/* Título principal con efecto de gradiente */
 h1 {
     font-size: 3.5rem;
     font-weight: 700;
@@ -49,6 +57,7 @@ h1 {
     -webkit-text-fill-color: transparent;
 }
 
+/* Subtítulo del documento */
 .subtitle {
     font-size: 1.5rem;
     color: #a0a0a0;
@@ -117,17 +126,20 @@ h1 {
     font-size: 1.1rem;
 }
 
+/* Estilos del contenido principal */
 .content {
     max-width: 1200px;
     margin: 0 auto;
     padding: 4rem 2rem;
 }
 
+/* Estilos de las secciones */
 section {
     margin-bottom: 4rem;
     position: relative;
 }
 
+/* Línea decorativa vertical de las secciones */
 section::before {
     content: '';
     position: absolute;
@@ -139,18 +151,21 @@ section::before {
     opacity: 0.5;
 }
 
+/* Títulos de secciones */
 h2 {
     font-size: 2rem;
     margin-bottom: 2rem;
     color: var(--samsung-white);
 }
 
+/* Párrafos de texto */
 p {
     margin-bottom: 1.5rem;
     font-size: 1.1rem;
     color: #a0a0a0;
 }
 
+/* Estilos de las tablas */
 .table-container {
     margin: 2rem 0;
     overflow-x: auto;
@@ -191,6 +206,7 @@ th {
     border-radius: 5px;
 }
 
+/* Estilos del pie de página */
 .piepagina {
     text-align: center;
     padding: 4rem 2rem 2rem;
@@ -198,6 +214,7 @@ th {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+/* Contenido del pie de página */
 .footer-content {
     margin: 2rem auto;
     padding: 2rem 0;
@@ -217,6 +234,7 @@ th {
     font-weight: bold;
 }
 
+/* Sección de derechos de autor */
 .copyright {
     padding: 2rem 0 0;
     max-width: 800px;
@@ -314,5 +332,69 @@ th {
     
     .copyright p {
         font-size: 0.8rem;
+    }
+}
+
+/* Estilos de los bloques de código */
+.code-block {
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 2rem 1.5rem 1.5rem;
+    margin: 2rem 0;
+    font-family: 'Consolas', 'Monaco', monospace;
+    position: relative;
+}
+
+/* Wrapper para scroll horizontal en código */
+.code-block-wrapper {
+    overflow-x: auto;
+}
+
+/* Etiqueta "CODE" en bloques de código */
+.code-block::before {
+    content: 'CODE';
+    position: absolute;
+    top: -10px;
+    left: 15px;
+    background: var(--samsung-black);
+    padding: 2px 12px;
+    color: var(--accent-color);
+    font-size: 0.9rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    z-index: 2;
+    height: 20px;
+    line-height: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos del texto de código */
+.code-block code {
+    color: #e0e0e0;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    display: block;
+    white-space: pre;
+    overflow-x: auto;
+}
+
+/* Colores de sintaxis para código */
+.code-block .comment { color: #6a9955; }  /* Comentarios */
+.code-block .keyword { color: #569cd6; }  /* Palabras clave */
+.code-block .string { color: #ce9178; }   /* Cadenas de texto */
+.code-block .number { color: #b5cea8; }   /* Números */
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    /* Ajustes para dispositivos móviles */
+    .code-block {
+        padding: 1rem;
+        font-size: 0.85rem;
+    }
+    .code-block code {
+        font-size: 0.85rem;
     }
 } 
