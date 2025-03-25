@@ -43,8 +43,9 @@ body {
 
 /* Estilos de los logos */
 .samsung-logo, .udem-logo {
-    height: 40px;
+    height: 60px;
     object-fit: contain;
+    margin: 0 1rem;
 }
 
 /* Título principal con efecto de gradiente */
@@ -396,5 +397,134 @@ th {
     }
     .code-block code {
         font-size: 0.85rem;
+    }
+}
+
+/* Estilos del carrusel de equipo */
+.team-carousel {
+    max-width: 1000px;
+    margin: 0 auto 3rem;
+    padding: 2rem;
+}
+
+.team-carousel h3 {
+    color: var(--samsung-white);
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.carousel-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 40px;
+}
+
+.carousel-track {
+    display: flex;
+    gap: 2rem;
+    overflow: hidden;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    padding: 1rem 0;
+}
+
+.team-member {
+    min-width: 200px;
+    text-align: center;
+    opacity: 0.5;
+    transition: all 0.3s ease;
+}
+
+.team-member.active {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.member-photo {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 1rem;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid var(--accent-color);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    background-color: #fff;
+}
+
+.member-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    display: block;
+}
+
+.member-photo:hover {
+    transform: scale(1.05);
+}
+
+.member-photo:hover img {
+    transform: scale(1.1);
+}
+
+.team-member h4 {
+    color: var(--samsung-white);
+    font-size: 1.1rem;
+    margin-top: 1rem;
+    font-weight: 500;
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    color: var(--samsung-white);
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.carousel-button:hover {
+    background: var(--accent-color);
+}
+
+.carousel-button.prev {
+    left: 0;
+}
+
+.carousel-button.next {
+    right: 0;
+}
+
+@media (max-width: 768px) {
+    .team-carousel {
+        padding: 1rem;
+    }
+
+    .member-photo {
+        width: 120px;
+        height: 120px;
+    }
+
+    .team-member h4 {
+        font-size: 0.9rem;
+    }
+
+    .carousel-button {
+        width: 30px;
+        height: 30px;
+        font-size: 1rem;
     }
 } 

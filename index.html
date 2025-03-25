@@ -9,8 +9,8 @@
 <body>
     <header class="header">
         <div class="logo-container">
-            <img src="siclogo.jpeg" alt="Samsung Logo" class="samsung-logo">
-            <img src="udemlogo.jpeg" alt="UDEM Logo" class="udem-logo">
+            <img src="./siclogo.jpeg" alt="Samsung Logo" class="samsung-logo">
+            <img src="./udemlogo.jpeg" alt="UDEM Logo" class="udem-logo">
         </div>
         <h1>Samsung Innovation Campus</h1>
         <div class="subtitle">Detección de sargazo en playas veracruzanas mediante técnicas de visión por computadora y redes neuronales</div>
@@ -187,22 +187,52 @@ history = model.fit(
     </main>
 
     <footer class="piepagina">
-        <div class="autores" style="background: transparent; color: white; text-align: center;">
-            <h3 style="text-align: left;">Sobre nosotros</h3>
-            <ul style="list-style">
-                <li>Coria Juarez Isabella</li>
-                <li>Hernández Ortiz Lizette Ariadna</li>
-                <li>Moran Michell Alexis Policarpio</li>
-                <li>Moreno Luna Victor Daniel</li>
-                <li>Mota López Brandon Josafat</li>
-                <li>Rivera Merlin Alexis</li>
-            </ul>
+        <div class="team-carousel">
+            <h3>Nuestro Equipo</h3>
+            <div class="carousel-container">
+                <button class="carousel-button prev">&#10094;</button>
+                <div class="carousel-track">
+                    <div class="team-member">
+                        <div class="member-photo">
+                            <img src="./isabella.jpg" alt="Isabella Coria" class="foto-isabella">
+                        </div>
+                        <h4>Isabella Coria Juarez</h4>
+                    </div>
+                    <div class="team-member">
+                        <div class="member-photo">
+                            <img src="./lizette.jpg" alt="Lizette Hernández" class="foto-lizette">
+                        </div>
+                        <h4>Lizette Ariadna Hernández Ortiz</h4>
+                    </div>
+                    <div class="team-member">
+                        <div class="member-photo">
+                            <img src="./michell.jpg" alt="Michell Policarpio" class="foto-michell">
+                        </div>
+                        <h4>Michell Alexis Policarpio Moran</h4>
+                    </div>
+                    <div class="team-member">
+                        <div class="member-photo">
+                            <img src="./brandon.jpg" alt="Brandon Mota" class="foto-brandon">
+                        </div>
+                        <h4>Brandon Josafat Mota López</h4>
+                    </div>
+                    <div class="team-member">
+                        <div class="member-photo">
+                            <img src="./alexis.jpg" alt="Alexis Rivera" class="foto-alexis">
+                        </div>
+                        <h4>Alexis Rivera Merlin</h4>
+                    </div>
+                    <div class="team-member">
+                        <div class="member-photo">
+                            <img src="./victor.jpg" alt="Victor Moreno" class="foto-victor">
+                        </div>
+                        <h4>Victor Daniel Moreno Luna</h4>
+                    </div>
+                </div>
+                <button class="carousel-button next">&#10095;</button>
+            </div>
         </div>
-        <div class="date" style="color:white; text-align: center;">Abril de 2025</div>
-        <div class="footer-content">
-            <p>Together for Tomorrow!</p>
-            <p>Enabling People</p>
-        </div>
+      
         <div class="copyright">
             <p>© 2025 Samsung Innovation Campus - UDEM. Todos los derechos reservados.</p>
             <p>Este trabajo fue desarrollado como parte del programa Samsung Innovation Campus en colaboración con la Universidad de México.</p>
