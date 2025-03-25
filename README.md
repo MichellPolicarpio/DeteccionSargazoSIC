@@ -6,6 +6,9 @@
 
 Este proyecto desarrolla un modelo computacional de visión por computadora para identificar y clasificar la presencia de sargazo en playas del Golfo de México, específicamente en Veracruz.
 
+### Link de visualización del reporte
+https://michellpolicarpio.github.io/DeteccionSargazoSIC/
+
 ### Problema Abordado 🏖️
 
 La acumulación masiva de sargazo en costas del Caribe y Golfo de México representa un desafío significativo para:
