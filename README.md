@@ -18,7 +18,7 @@ La acumulación masiva de sargazo en costas del Caribe y Golfo de México repres
 
 ### Objetivo Principal 🎯
 
-Crear una herramienta tecnológica accesible que permita:
+Crear un modelo que permita:
 - Detección automatizada de sargazo
 - Generación de información espacial detallada
 - Monitoreo costero eficiente
