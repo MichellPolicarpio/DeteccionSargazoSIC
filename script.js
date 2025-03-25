@@ -98,9 +98,10 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, observerOptions);
 
+    // Asegurar que las secciones sean visibles desde el inicio
     sections.forEach(section => {
-        section.style.opacity = '0';
-        section.style.transform = 'translateY(20px)';
+        section.style.opacity = '1';
+        section.style.transform = 'translateY(0)';
         section.style.transition = 'all 0.6s ease-out';
         observer.observe(section);
     });

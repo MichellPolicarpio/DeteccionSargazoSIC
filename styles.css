@@ -23,6 +23,9 @@ body {
     color: var(--samsung-white);
     line-height: 1.6;
     padding-top: 60px; /* Añadir padding para el menú fijo */
+    min-height: 100vh;
+    opacity: 1;
+    visibility: visible;
 }
 
 /* Estilos del encabezado principal */
@@ -151,6 +154,10 @@ h1 br {
 section {
     margin-bottom: 4rem;
     position: relative;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    transition: all 0.6s ease-out;
 }
 
 /* Línea decorativa vertical de las secciones */
