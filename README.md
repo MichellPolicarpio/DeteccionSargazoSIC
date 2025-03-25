@@ -65,7 +65,7 @@ El proyecto contribuye a:
 ![Samsung](https://img.shields.io/badge/Samsung-1428A0?style=for-the-badge&logo=samsung&logoColor=white)
 ![UDEM](https://img.shields.io/badge/Universidad-Desarrollo%20Empresarial-blue?style=for-the-badge)
 
-Desarrollado por:
+Proyecto desarrollado para las siguientes instituciones:
 - Samsung Innovation Campus
 - Universidad de México (UDEM)
 
