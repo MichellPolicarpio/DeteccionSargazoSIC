@@ -7,136 +7,152 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header class="header">
-        <div class="logo-container">
-            <img src="./siclogo.jpeg" alt="Samsung Logo" class="samsung-logo">
-            <img src="./udemlogo.jpeg" alt="UDEM Logo" class="udem-logo">
+    <nav class="nav-menu">
+        <button class="menu-toggle" aria-label="Abrir menú">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <div class="nav-container">
+            <a href="#inicio" class="nav-link">Inicio</a>
+            <a href="#metodologia" class="nav-link">Metodología</a>
+            <a href="https://colab.research.google.com/drive/your-notebook-id" class="nav-link">Notebook</a>
+            <a href="#resultados" class="nav-link">Resultados</a>
+            <a href="#equipo" class="nav-link">Integrantes</a>
         </div>
-        <h1>Samsung Innovation Campus</h1>
-        <div class="subtitle">Detección de sargazo en playas veracruzanas mediante técnicas de visión por computadora y redes neuronales</div>
-        
-    </header>
+    </nav>
 
-    <main class="content">
-        <section class="introduccion">
-            <h2>I. Introducción</h2>
-            <p style="text-align: justify;">El sargazo (Sargassum spp.) es una macroalga parda que flota en las aguas tropicales y subtropicales, y cuya llegada masiva
-            a las costas —conocida como arribazón o "marea dorada"— representa un serio desafío para las autoridades ambientales y el sector turístico. 
-            Aunque esta biomasa ha sido considerada como recurso potencial para aplicaciones comerciales o energéticas, su alto contenido de contaminantes 
-            como arsénico ha generado preocupaciones ambientales y de salud pública. A esto se suma la dificultad logística y económica de su recolección y
-            disposición adecuada (Devault et al., 2021).</p>
-            <p style="text-align: justify;">En este contexto, el trabajo de (Arellano-Verdejo & Lazcano-Hernández, 2021) la visión por computadora ha emergido como una herramienta clave
-            para el monitoreo automatizado del sargazo, permitiendo procesar grandes volúmenes de imágenes de manera eficiente. En particular, las redes 
-            neuronales convolucionales (CNN) han demostrado un alto desempeño en tareas de clasificación de imágenes relacionadas con la presencia o 
-            ausencia de sargazo en playas.
-            Estas técnicas ofrecen una alternativa prometedora al monitoreo visual tradicional realizado por personas, ya que permiten generar información
-            georreferenciada con mayor rapidez, consistencia y escalabilidad.
-            </p>
-            <p style="text-align: justify;">Como señalan (Lazcano-Hernandez et al., (2023), los avances en inteligencia artificial y la incorporación de nuevas disciplinas han abierto 
-            portunidades importantes para innovar en el monitoreo costero, un campo que continúa enfrentando retos fundamentales.</p>
-        </section>
+    <section id="inicio">
+        <header class="header">
+            <div class="logo-container">
+                <img src="./siclogo.jpeg" alt="Samsung Logo" class="samsung-logo">
+                <img src="./udemlogo.jpeg" alt="UDEM Logo" class="udem-logo">
+            </div>
+            <h1>Proyecto Final<br>Samsung Innovation Campus</h1>
+            <div class="subtitle">Detección de sargazo en playas veracruzanas mediante técnicas de visión por computadora y redes neuronales</div>
+        </header>
 
-        <section class="problema">
-            <h2>II. Planteamiento del Problema</h2>
-            <p style="text-align: justify;">La acumulación masiva de sargazo en playas del Caribe y del Golfo de México, como en Veracruz (Luis Godínez-Ortega et al., 2021), ha generado
-                afectaciones al turismo, la salud pública y los ecosistemas costeros. Sin embargo, el monitoreo en zonas costeras sigue siendo limitado, ya
-                que depende en gran medida de observaciones visuales poco sistemáticas o de tecnologías que no siempre están al alcance de las comunidades 
-                locales.</p>
-            <p style="text-align: justify;">Existe la necesidad de soluciones tecnológicas más accesibles, capaces de detectar y clasificar la presencia de sargazo de manera automatizada. 
-                En este contexto, la visión por computadora y el uso de redes neuronales ofrecen una alternativa viable y escalable para apoyar la toma de decisiones 
-                en tiempo oportuno, con potencial para fortalecer la resiliencia local frente a este fenómeno. </p>
+        <main class="content">
+            <section class="introduccion">
+                <h2>I. Introducción</h2>
+                <p style="text-align: justify;">El sargazo (Sargassum spp.) es una macroalga parda que flota en las aguas tropicales y subtropicales, y cuya llegada masiva
+                a las costas —conocida como arribazón o "marea dorada"— representa un serio desafío para las autoridades ambientales y el sector turístico. 
+                Aunque esta biomasa ha sido considerada como recurso potencial para aplicaciones comerciales o energéticas, su alto contenido de contaminantes 
+                como arsénico ha generado preocupaciones ambientales y de salud pública. A esto se suma la dificultad logística y económica de su recolección y
+                disposición adecuada (Devault et al., 2021).</p>
+                <p style="text-align: justify;">En este contexto, el trabajo de (Arellano-Verdejo & Lazcano-Hernández, 2021) la visión por computadora ha emergido como una herramienta clave
+                para el monitoreo automatizado del sargazo, permitiendo procesar grandes volúmenes de imágenes de manera eficiente. En particular, las redes 
+                neuronales convolucionales (CNN) han demostrado un alto desempeño en tareas de clasificación de imágenes relacionadas con la presencia o 
+                ausencia de sargazo en playas.
+                Estas técnicas ofrecen una alternativa prometedora al monitoreo visual tradicional realizado por personas, ya que permiten generar información
+                georreferenciada con mayor rapidez, consistencia y escalabilidad.
+                </p>
+                <p style="text-align: justify;">Como señalan (Lazcano-Hernandez et al., (2023), los avances en inteligencia artificial y la incorporación de nuevas disciplinas han abierto 
+                portunidades importantes para innovar en el monitoreo costero, un campo que continúa enfrentando retos fundamentales.</p>
+            </section>
 
-        <section class="objectivos">
-            <h2>III. Objetivos</h2>
-            <p style="text-align: justify;"> Desarrollar un modelo computacional basado en segmentación semántica que permita identificar y clasificar por
-                píxel la presencia de sargazo en imágenes de playas veracruzanas,con el fin de generar información espacial detallada que contribuya al 
-                monitoreo costero. </p>
-            <p style="text-align: justify;">El enfoque propuesto busca facilitar la detección automatizada del sargazo mediante visión por computadora y 
-                aprendizaje profundo, favoreciendo su implementación en contextos locales como una herramienta accesible, eficiente y escalable para la gestión
-                ambiental.</p>
-        </section>
+            <section class="problema">
+                <h2>II. Planteamiento del Problema</h2>
+                <p style="text-align: justify;">La acumulación masiva de sargazo en playas del Caribe y del Golfo de México, como en Veracruz (Luis Godínez-Ortega et al., 2021), ha generado
+                    afectaciones al turismo, la salud pública y los ecosistemas costeros. Sin embargo, el monitoreo en zonas costeras sigue siendo limitado, ya
+                    que depende en gran medida de observaciones visuales poco sistemáticas o de tecnologías que no siempre están al alcance de las comunidades 
+                    locales.</p>
+                <p style="text-align: justify;">Existe la necesidad de soluciones tecnológicas más accesibles, capaces de detectar y clasificar la presencia de sargazo de manera automatizada. 
+                    En este contexto, la visión por computadora y el uso de redes neuronales ofrecen una alternativa viable y escalable para apoyar la toma de decisiones 
+                    en tiempo oportuno, con potencial para fortalecer la resiliencia local frente a este fenómeno. </p>
+            </section>
 
-        <section class="estadoarte">
-            <h2>IV. Estado del arte</h2>
-            
-        </section>
+            <section class="objectivos">
+                <h2>III. Objetivos</h2>
+                <p style="text-align: justify;"> Desarrollar un modelo computacional basado en segmentación semántica que permita identificar y clasificar por
+                    píxel la presencia de sargazo en imágenes de playas veracruzanas,con el fin de generar información espacial detallada que contribuya al 
+                    monitoreo costero. </p>
+                <p style="text-align: justify;">El enfoque propuesto busca facilitar la detección automatizada del sargazo mediante visión por computadora y 
+                    aprendizaje profundo, favoreciendo su implementación en contextos locales como una herramienta accesible, eficiente y escalable para la gestión
+                    ambiental.</p>
+            </section>
 
-        <section class="metodologia">
-            <h2>V. Metodología</h2>
-            <p style="text-align: justify;"> El diseño del sistema para la detección de sargazo en playas se abordó mediante una metodología estructurada en distintas fases, priorizando la solidez técnica, la eficiencia computacional y la claridad en la organización del código. Se incorporaron 
-                técnicas de inteligencia artificial orientadas a visión por computadora, aplicadas sobre imágenes costeras segmentadas semánticamente.</p>
+            <section class="estadoarte">
+                <h2>IV. Estado del arte</h2>
+                
+            </section>
 
-            <p style="text-align: justify;">Una etapa fundamental fue la obtención del dataset, el cual se tomó de una plataforma abierta, a partir trabajo de Arellano-Verdejo & Lazcano-Hernández, (2021). 
-                Dicho conjunto de imágenes fue generado a partir de fotografías georreferenciadas recopiladas mediante esquemas de crowdsourcing en la plataforma Collective View, enfocada en capturas a escala
-                de playa en la región de Mahahual, Quintana Roo (México), entre septiembre de 2019 y agosto de 2021. Aunque las imágenes presentaban variaciones técnicas, visuales y temporales fuera del control
-                de los autores originales, estas resultaron ser una fuente útil para el entrenamiento de modelos de segmentación automática.</p>
+            <section id="metodologia" class="metodologia">
+                <h2>V. Metodología</h2>
+                <p style="text-align: justify;"> El diseño del sistema para la detección de sargazo en playas se abordó mediante una metodología estructurada en distintas fases, priorizando la solidez técnica, la eficiencia computacional y la claridad en la organización del código. Se incorporaron 
+                    técnicas de inteligencia artificial orientadas a visión por computadora, aplicadas sobre imágenes costeras segmentadas semánticamente.</p>
 
-            <p style="text-align: justify;">El conjunto incluye imágenes segmentadas mediante el modelo Pix2Pix, una arquitectura basada en redes generativas 
-                adversariales (GANs) adaptadas para tareas de segmentación semántica. A partir de estas segmentaciones, fue posible construir mapas de cobertura de 
-                Sargassum por píxel, sirviendo como referencia para el entrenamiento supervisado de modelos adicionales y para la validación de nuevas predicciones.
-                La metodología completa abarca el preprocesamiento de datos, el entrenamiento de modelos basados en redes neuronales convolucionales 
-                para segmentación semántica, y la validación experimental orientada al monitoreo automatizado de sargazo en entornos costeros.</p>
-            </p>
-            <h3>V. I Preprocesamiento de datos</h3>
-            <p style="text-align:justify">El preprocesamiento del conjunto de datos se diseñó de forma modular utilizando TensorFlow, con imágenes redimensionadas a 256×256 píxeles y normalizadas en el rango [0, 1]. Las máscaras, codificadas por color, fueron convertidas en etiquetas por píxel mediante un mapeo RGB a clases discretas. Se definieron los colores de clase de la siguiente forma:</p>
-            
-            <div class="code-block">
-                <div class="code-block-wrapper">
-                    <code>CLASS_COLORS = np.array([
+                <p style="text-align: justify;">Una etapa fundamental fue la obtención del dataset, el cual se tomó de una plataforma abierta, a partir trabajo de Arellano-Verdejo & Lazcano-Hernández, (2021). 
+                    Dicho conjunto de imágenes fue generado a partir de fotografías georreferenciadas recopiladas mediante esquemas de crowdsourcing en la plataforma Collective View, enfocada en capturas a escala
+                    de playa en la región de Mahahual, Quintana Roo (México), entre septiembre de 2019 y agosto de 2021. Aunque las imágenes presentaban variaciones técnicas, visuales y temporales fuera del control
+                    de los autores originales, estas resultaron ser una fuente útil para el entrenamiento de modelos de segmentación automática.</p>
+
+                <p style="text-align: justify;">El conjunto incluye imágenes segmentadas mediante el modelo Pix2Pix, una arquitectura basada en redes generativas 
+                    adversariales (GANs) adaptadas para tareas de segmentación semántica. A partir de estas segmentaciones, fue posible construir mapas de cobertura de 
+                    Sargassum por píxel, sirviendo como referencia para el entrenamiento supervisado de modelos adicionales y para la validación de nuevas predicciones.
+                    La metodología completa abarca el preprocesamiento de datos, el entrenamiento de modelos basados en redes neuronales convolucionales 
+                    para segmentación semántica, y la validación experimental orientada al monitoreo automatizado de sargazo en entornos costeros.</p>
+                </p>
+                <h3>V. I Preprocesamiento de datos</h3>
+                <p style="text-align:justify">El preprocesamiento del conjunto de datos se diseñó de forma modular utilizando TensorFlow, con imágenes redimensionadas a 256×256 píxeles y normalizadas en el rango [0, 1]. Las máscaras, codificadas por color, fueron convertidas en etiquetas por píxel mediante un mapeo RGB a clases discretas. Se definieron los colores de clase de la siguiente forma:</p>
+                
+                <div class="code-block">
+                    <div class="code-block-wrapper">
+                        <code>CLASS_COLORS = np.array([
     [255, 255, 0],   # Clase 0
     [139, 0, 0],     # Clase 1
     [192, 192, 192]  # Clase 2
 ]) / 255.0</code>
+                    </div>
                 </div>
-            </div>
 
-            <p style="text-align:justify">La función de carga y conversión de máscaras se basa en la comparación de cada píxel con los colores definidos, utilizando distancia euclidiana y selección por argmin.
-                El proceso completo se encapsuló en una función load_image_and_mask(), utilizada en un pipeline de tf.data.Dataset.</p>
-            
-            <div class="code-block">
-                <code>dataset = tf.data.Dataset.from_tensor_slices((image_paths, mask_paths))
+                <p style="text-align:justify">La función de carga y conversión de máscaras se basa en la comparación de cada píxel con los colores definidos, utilizando distancia euclidiana y selección por argmin.
+                    El proceso completo se encapsuló en una función load_image_and_mask(), utilizada en un pipeline de tf.data.Dataset.</p>
+                
+                <div class="code-block">
+                    <code>dataset = tf.data.Dataset.from_tensor_slices((image_paths, mask_paths))
 dataset = dataset.map(load_image_and_mask)
 dataset = dataset.shuffle(100).batch(BATCH_SIZE).prefetch(tf.data.AUTOTUNE)</code>
-            </div>
+                </div>
 
-            <p style="text-align:justify">Además, se implementó una métrica personalizada basada en MeanIoU, con conversión automática de salidas softmax a clases mediante argmax.</p>
-            
-            <div class="code-block">
-                <code>class ArgmaxMeanIoU(MeanIoU):
+                <p style="text-align:justify">Además, se implementó una métrica personalizada basada en MeanIoU, con conversión automática de salidas softmax a clases mediante argmax.</p>
+                
+                <div class="code-block">
+                    <code>class ArgmaxMeanIoU(MeanIoU):
     def update_state(self, y_true, y_pred, sample_weight=None):
         y_pred = tf.argmax(y_pred, axis=-1)
         return super().update_state(y_true, y_pred, sample_weight)</code>
-            </div>
+                </div>
 
-            <p style="text-align:justify">Este flujo asegura eficiencia en la carga de datos, mantiene la consistencia del formato de entrada, y permite escalar fácilmente a otros conjuntos o configuraciones.</p>
+                <p style="text-align:justify">Este flujo asegura eficiencia en la carga de datos, mantiene la consistencia del formato de entrada, y permite escalar fácilmente a otros conjuntos o configuraciones.</p>
 
-            <h3>5.2. Arquitectura del modelo</h3>
-            <p style="text-align:justify">El modelo empleado para la segmentación semántica fue implementado utilizando la arquitectura U-Net, reconocida por su eficacia en tareas de segmentación a nivel de píxel. Esta red se compone de dos rutas principales: un codificador (encoder) que extrae características espaciales mediante convoluciones y pooling, y un decodificador (decoder) que reconstruye la segmentación usando upsampling y concatenaciones de activaciones intermedias.</p>
+                <h3>5.2. Arquitectura del modelo</h3>
+                <p style="text-align:justify">El modelo empleado para la segmentación semántica fue implementado utilizando la arquitectura U-Net, reconocida por su eficacia en tareas de segmentación a nivel de píxel. Esta red se compone de dos rutas principales: un codificador (encoder) que extrae características espaciales mediante convoluciones y pooling, y un decodificador (decoder) que reconstruye la segmentación usando upsampling y concatenaciones de activaciones intermedias.</p>
 
-            <div class="code-block">
-                <code>inputs = Input(shape=(256, 256, 3))
+                <div class="code-block">
+                    <code>inputs = Input(shape=(256, 256, 3))
 c1 = Conv2D(32, (3, 3), activation='relu', padding='same')(inputs)
 p1 = MaxPooling2D((2, 2))(c1)
 # ...
 u5 = UpSampling2D((2, 2))(c4)
 outputs = Conv2D(3, (1, 1), activation='softmax')(c5)</code>
-            </div>
+                </div>
 
-            <p style="text-align:justify">El modelo fue compilado con el optimizador Adam, función de pérdida sparse_categorical_crossentropy, y la métrica MeanIoU adaptada para clasificaciones discretas:</p>
+                <p style="text-align:justify">El modelo fue compilado con el optimizador Adam, función de pérdida sparse_categorical_crossentropy, y la métrica MeanIoU adaptada para clasificaciones discretas:</p>
 
-            <div class="code-block">
-                <code>model.compile(
+                <div class="code-block">
+                    <code>model.compile(
     optimizer='adam',
     loss='sparse_categorical_crossentropy',
     metrics=['accuracy', ArgmaxMeanIoU(num_classes=3)]
 )</code>
-            </div>
+                </div>
 
-            <h3>V. III Entrenamiento del modelo</h3>
-            <p style="text-align:justify">El entrenamiento del modelo se llevó a cabo utilizando el conjunto de datos previamente procesado y estructurado en lotes. Se empleó la función model.fit() de TensorFlow para realizar el ajuste de pesos a lo largo de múltiples épocas, utilizando validación cruzada con el conjunto de prueba.</p>
+                <h3>V. III Entrenamiento del modelo</h3>
+                <p style="text-align:justify">El entrenamiento del modelo se llevó a cabo utilizando el conjunto de datos previamente procesado y estructurado en lotes. Se empleó la función model.fit() de TensorFlow para realizar el ajuste de pesos a lo largo de múltiples épocas, utilizando validación cruzada con el conjunto de prueba.</p>
 
-            <div class="code-block">
-                <code>checkpoint = tf.keras.callbacks.ModelCheckpoint(
+                <div class="code-block">
+                    <code>checkpoint = tf.keras.callbacks.ModelCheckpoint(
     'best_model.keras',
     monitor='val_loss',
     save_best_only=True,
@@ -149,95 +165,96 @@ history = model.fit(
     epochs=EPOCHS,
     callbacks=[checkpoint]
 )</code>
-            </div>
+                </div>
                 
-        </section>
+            </section>
 
-        <section class="resultados">
-            <h2>VI. Resultados</h2>
-            <div class="tablacontenido">
-                <table>
-                    <caption>Tabla 1. </caption>
-                    <thead>
-                        <tr>
-                            <th>Categoría</th>
-                            <th>Categoría</th>
-                            <th>Categoría</th>
-                            <th>Categoría</th>
-                            <th>Categoría</th>
-                            <th>Categoría</th>
-                            <th>Categoría</th>
-                            <th>Categoría</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>Contenido</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-                        <tr><td>Contenido</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-                        <tr><td>Contenido</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-                        <tr><td>Contenido</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-                        <tr><td>Contenido</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-                    </tbody>
-                </table>
-                <div class="notastabla">
-                    <p>Nota: nota de la tabla en caso de ser necesaria</p>
-                    <p>Referencia: Tomada de: "Título de la referencia" por Autor (es). Año, Título. Página</p>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="piepagina">
-        <div class="team-carousel">
-            <h3>Nuestro Equipo</h3>
-            <div class="carousel-container">
-                <button class="carousel-button prev">&#10094;</button>
-                <div class="carousel-track">
-                    <div class="team-member">
-                        <div class="member-photo">
-                            <img src="./isabella.jpg" alt="Isabella Coria" class="foto-isabella">
-                        </div>
-                        <h4>Isabella Coria Juarez</h4>
-                    </div>
-                    <div class="team-member">
-                        <div class="member-photo">
-                            <img src="./lizette.jpg" alt="Lizette Hernández" class="foto-lizette">
-                        </div>
-                        <h4>Lizette Ariadna Hernández Ortiz</h4>
-                    </div>
-                    <div class="team-member">
-                        <div class="member-photo">
-                            <img src="./michell.jpg" alt="Michell Policarpio" class="foto-michell">
-                        </div>
-                        <h4>Michell Alexis Policarpio Moran</h4>
-                    </div>
-                    <div class="team-member">
-                        <div class="member-photo">
-                            <img src="./brandon.jpg" alt="Brandon Mota" class="foto-brandon">
-                        </div>
-                        <h4>Brandon Josafat Mota López</h4>
-                    </div>
-                    <div class="team-member">
-                        <div class="member-photo">
-                            <img src="./alexis.jpg" alt="Alexis Rivera" class="foto-alexis">
-                        </div>
-                        <h4>Alexis Rivera Merlin</h4>
-                    </div>
-                    <div class="team-member">
-                        <div class="member-photo">
-                            <img src="./victor.jpg" alt="Victor Moreno" class="foto-victor">
-                        </div>
-                        <h4>Victor Daniel Moreno Luna</h4>
+            <section id="resultados" class="resultados">
+                <h2>VI. Resultados</h2>
+                <div class="tablacontenido">
+                    <table>
+                        <caption>Tabla 1. </caption>
+                        <thead>
+                            <tr>
+                                <th>Categoría</th>
+                                <th>Categoría</th>
+                                <th>Categoría</th>
+                                <th>Categoría</th>
+                                <th>Categoría</th>
+                                <th>Categoría</th>
+                                <th>Categoría</th>
+                                <th>Categoría</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Contenido</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                            <tr><td>Contenido</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                            <tr><td>Contenido</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                            <tr><td>Contenido</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                            <tr><td>Contenido</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                        </tbody>
+                    </table>
+                    <div class="notastabla">
+                        <p>Nota: nota de la tabla en caso de ser necesaria</p>
+                        <p>Referencia: Tomada de: "Título de la referencia" por Autor (es). Año, Título. Página</p>
                     </div>
                 </div>
-                <button class="carousel-button next">&#10095;</button>
+            </section>
+        </main>
+
+        <footer class="piepagina">
+            <section id="equipo" class="team-carousel">
+                <h3>Nuestro Equipo</h3>
+                <div class="carousel-container">
+                    <button class="carousel-button prev">&#10094;</button>
+                    <div class="carousel-track">
+                        <div class="team-member">
+                            <div class="member-photo">
+                                <img src="./isabella.jpg" alt="Isabella Coria" class="foto-isabella">
+                            </div>
+                            <h4>Isabella Coria Juarez</h4>
+                        </div>
+                        <div class="team-member">
+                            <div class="member-photo">
+                                <img src="./lizette.jpg" alt="Lizette Hernández" class="foto-lizette">
+                            </div>
+                            <h4>Lizette Ariadna Hernández Ortiz</h4>
+                        </div>
+                        <div class="team-member">
+                            <div class="member-photo">
+                                <img src="./michell.jpg" alt="Michell Policarpio" class="foto-michell">
+                            </div>
+                            <h4>Michell Alexis Policarpio Moran</h4>
+                        </div>
+                        <div class="team-member">
+                            <div class="member-photo">
+                                <img src="./brandon.jpg" alt="Brandon Mota" class="foto-brandon">
+                            </div>
+                            <h4>Brandon Josafat Mota López</h4>
+                        </div>
+                        <div class="team-member">
+                            <div class="member-photo">
+                                <img src="./alexis.jpg" alt="Alexis Rivera" class="foto-alexis">
+                            </div>
+                            <h4>Alexis Rivera Merlin</h4>
+                        </div>
+                        <div class="team-member">
+                            <div class="member-photo">
+                                <img src="./victor.jpg" alt="Victor Moreno" class="foto-victor">
+                            </div>
+                            <h4>Victor Daniel Moreno Luna</h4>
+                        </div>
+                    </div>
+                    <button class="carousel-button next">&#10095;</button>
+                </div>
+            </section>
+          
+            <div class="copyright">
+                <p>© 2025 Samsung Innovation Campus - UDEM. Todos los derechos reservados.</p>
+                <p>Este trabajo fue desarrollado como parte del programa Samsung Innovation Campus en colaboración con la Universidad de México.</p>
             </div>
-        </div>
-      
-        <div class="copyright">
-            <p>© 2025 Samsung Innovation Campus - UDEM. Todos los derechos reservados.</p>
-            <p>Este trabajo fue desarrollado como parte del programa Samsung Innovation Campus en colaboración con la Universidad de México.</p>
-        </div>
-    </footer>
+        </footer>
+    </section>
 
     <script src="script.js"></script>
 </body>

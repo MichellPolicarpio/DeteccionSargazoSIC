@@ -22,6 +22,7 @@ body {
     background-color: var(--samsung-black);
     color: var(--samsung-white);
     line-height: 1.6;
+    padding-top: 60px; /* Añadir padding para el menú fijo */
 }
 
 /* Estilos del encabezado principal */
@@ -30,6 +31,8 @@ body {
     text-align: center;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     margin-bottom: 2rem;
+    position: relative;
+    z-index: 1;
 }
 
 /* Contenedor de logos */
@@ -52,10 +55,17 @@ body {
 h1 {
     font-size: 3.5rem;
     font-weight: 700;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     background: linear-gradient(45deg, var(--samsung-white), #a0a0a0);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    line-height: 1.2;
+}
+
+h1 br {
+    display: block;
+    content: "";
+    margin-top: 0.5rem;
 }
 
 /* Subtítulo del documento */
@@ -64,6 +74,8 @@ h1 {
     color: #a0a0a0;
     max-width: 800px;
     margin: 0 auto 3rem;
+    padding: 0 1rem;
+    transition: opacity 0.3s ease;
 }
 
 .authors {
@@ -132,6 +144,7 @@ h1 {
     max-width: 1200px;
     margin: 0 auto;
     padding: 4rem 2rem;
+    padding-top: 2rem;
 }
 
 /* Estilos de las secciones */
@@ -291,17 +304,45 @@ th {
 
 @media (max-width: 768px) {
     h1 {
-        font-size: 2.5rem;
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+        line-height: 1.3;
+    }
+
+    h1 br {
+        margin-top: 0.3rem;
     }
     
     .subtitle {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+        line-height: 1.4;
+    }
+    
+    .header {
+        padding: 1.5rem 1rem;
+        margin-bottom: 1rem;
+        margin-top: 60px;
+        padding-top: 1.5rem;
+    }
+
+    .logo-container {
+        margin-bottom: 1.5rem;
+    }
+
+    .samsung-logo, .udem-logo {
+        height: 40px;
     }
     
     .content {
-        padding: 2rem 1rem;
+        padding: 1rem;
+        padding-top: 1rem;
     }
     
+    section {
+        margin-bottom: 3rem;
+    }
+
     section::before {
         left: -1rem;
     }
@@ -333,6 +374,53 @@ th {
     
     .copyright p {
         font-size: 0.8rem;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-container {
+        position: fixed;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.95);
+        flex-direction: column;
+        padding: 1rem 0;
+        gap: 1rem;
+        transform: translateY(-150%);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+    }
+
+    .nav-menu.active .nav-container {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .nav-menu.active .menu-toggle span:first-child {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .nav-menu.active .menu-toggle span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .nav-menu.active .menu-toggle span:last-child {
+        transform: rotate(-45deg) translate(7px, -7px);
+    }
+
+    section h2 {
+        font-size: 1.5rem;
+        margin: 2rem 0 1rem;
+    }
+
+    .introduccion {
+        margin-top: 2rem;
+        padding-top: 2rem;
     }
 }
 
@@ -405,6 +493,7 @@ th {
     max-width: 1000px;
     margin: 0 auto 3rem;
     padding: 2rem;
+    overflow: hidden;
 }
 
 .team-carousel h3 {
@@ -420,21 +509,19 @@ th {
     align-items: center;
     justify-content: center;
     padding: 0 40px;
+    overflow: hidden;
 }
 
 .carousel-track {
     display: flex;
+    transition: transform 0.5s ease;
     gap: 2rem;
-    overflow: hidden;
-    scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch;
-    padding: 1rem 0;
+    width: 100%;
 }
 
 .team-member {
-    min-width: 200px;
+    flex: 0 0 200px;
     text-align: center;
-    opacity: 0.5;
     transition: all 0.3s ease;
 }
 
@@ -513,9 +600,17 @@ th {
         padding: 1rem;
     }
 
+    .carousel-container {
+        padding: 0 30px;
+    }
+
+    .team-member {
+        flex: 0 0 150px;
+    }
+
     .member-photo {
-        width: 120px;
-        height: 120px;
+        width: 100px;
+        height: 100px;
     }
 
     .team-member h4 {
@@ -527,4 +622,157 @@ th {
         height: 30px;
         font-size: 1rem;
     }
+}
+
+/* Estilos de la barra de navegación */
+.nav-menu {
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    z-index: 1001;
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.menu-toggle span {
+    display: block;
+    width: 25px;
+    height: 2px;
+    background-color: var(--samsung-white);
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
+
+.nav-link {
+    color: var(--samsung-white);
+    text-decoration: none;
+    font-size: 1.1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background: var(--accent-color);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 80%;
+}
+
+.nav-link:hover {
+    color: var(--accent-color);
+}
+
+.nav-link.active {
+    color: var(--accent-color);
+}
+
+.nav-link.active::after {
+    width: 80%;
+}
+
+/* Ajuste para el scroll suave */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px; /* Compensar la altura de la barra de navegación */
+}
+
+@media (max-width: 768px) {
+    .nav-menu {
+        justify-content: center;
+        padding-right: 4rem;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-container {
+        position: fixed;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.95);
+        flex-direction: column;
+        padding: 1rem 0;
+        gap: 1rem;
+        transform: translateY(-150%);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        margin: 0;
+    }
+
+    .nav-menu.active .nav-container {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .nav-menu.active .menu-toggle span:first-child {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .nav-menu.active .menu-toggle span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .nav-menu.active .menu-toggle span:last-child {
+        transform: rotate(-45deg) translate(7px, -7px);
+    }
+
+    .nav-link {
+        width: 100%;
+        text-align: center;
+        padding: 1rem;
+        color: var(--samsung-white);
+        text-decoration: none;
+        font-size: 1.1rem;
+    }
+
+    .nav-link:hover {
+        background: rgba(255, 255, 255, 0.1);
+    }
+}
+
+.introduccion {
+    margin-top: 2rem;
+    padding-top: 2rem;
 } 
