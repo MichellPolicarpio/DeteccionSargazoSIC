@@ -16,7 +16,7 @@
         <div class="nav-container">
             <a href="#inicio" class="nav-link">Inicio</a>
             <a href="#metodologia" class="nav-link">Metodología</a>
-            <a href="https://colab.research.google.com/drive/your-notebook-id" class="nav-link">Notebook</a>
+            <a href="https://colab.research.google.com/drive/1F9jBLcWd1ITPgZSNDlnn7EnJUWNGxWPB?usp=sharing" class="nav-link">Notebook</a>
             <a href="#resultados" class="nav-link">Resultados</a>
             <a href="#equipo" class="nav-link">Integrantes</a>
         </div>
@@ -171,6 +171,44 @@ history = model.fit(
 
             <section id="resultados" class="resultados">
                 <h2>VI. Resultados</h2>
+                <div class="metricas-container">
+                    <div class="metrica-item">
+                        <img src="./ExactitudDuranteEntrenamiento.jpg" alt="Gráfica de Exactitud durante el Entrenamiento" class="metrica-grafica grafica-hover">
+                        <p class="pie-foto">Exactitud del modelo durante el entrenamiento, mostrando la convergencia del aprendizaje</p>
+                    </div>
+                    <div class="metrica-item">
+                        <img src="./IoUDuranteEntrenamiento.jpg" alt="Gráfica de IoU durante el Entrenamiento" class="metrica-grafica grafica-hover">
+                        <p class="pie-foto">Índice de IoU durante el entrenamiento, indicando la precisión de la segmentación</p>
+                    </div>
+                    <div class="metrica-item">
+                        <img src="./PerdidaDuranteEntrenamiento.jpg" alt="Gráfica de Pérdida durante el Entrenamiento" class="metrica-grafica grafica-hover">
+                        <p class="pie-foto">Función de pérdida durante el entrenamiento, mostrando la optimización del modelo</p>
+                    </div>
+                </div>
+
+                <div class="resultados-preliminares">
+                    <h3>Resultados Preliminares del Dataset</h3>
+                    <div class="resultados-imagen-container">
+                        <img src="./ResultadosPreliminaresDataset.jpg" alt="Resultados Preliminares del Dataset" class="resultados-imagen">
+                        <div class="interpretacion-resultados">
+                            <h4>Interpretación de los Resultados:</h4>
+                            <p style="text-align: justify;">Las imágenes muestran el rendimiento del modelo en la segmentación de sargazo. En cada fila se presentan tres elementos:</p>
+                            <ul>
+                                <li><strong>Imagen de Entrada:</strong> La fotografía original de la playa con presencia de sargazo.</li>
+                                <li><strong>Máscara Real:</strong> La segmentación manual realizada por expertos, donde:
+                                    <ul>
+                                        <li>Amarillo (Clase 0): Representa la arena de la playa</li>
+                                        <li>Rojo oscuro (Clase 1): Indica la presencia de sargazo</li>
+                                        <li>Gris (Clase 2): Señala otras áreas como agua o vegetación</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Máscara Predicha:</strong> La segmentación generada por nuestro modelo, utilizando el mismo esquema de colores.</li>
+                            </ul>
+                            <p style="text-align: justify;">Como se puede observar, el modelo logra una segmentación bastante precisa, identificando correctamente las áreas con sargazo y diferenciándolas de la arena y otros elementos del entorno. La comparación entre las máscaras reales y predichas muestra una alta coincidencia en la delimitación de las diferentes clases, lo que valida la efectividad del modelo para esta tarea de segmentación.</p>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="tablacontenido">
                     <table>
                         <caption>Tabla 1. </caption>
@@ -201,6 +239,32 @@ history = model.fit(
                 </div>
             </section>
         </main>
+
+        <section class="recursos-adicionales">
+            <h2>Recursos Adicionales</h2>
+            <div class="recursos-grid">
+                <a href="https://colab.research.google.com/drive/1F9jBLcWd1ITPgZSNDlnn7EnJUWNGxWPB?usp=sharing" class="recurso-card" target="_blank">
+                    <div class="recurso-icon">📓</div>
+                    <h3>Notebook del Proyecto</h3>
+                    <p>Accede al notebook de Google Colab con todo el código y análisis detallado</p>
+                </a>
+                <a href="https://github.com/MichellPolicarpio/DeteccionSargazoSIC/" class="recurso-card" target="_blank">
+                    <div class="recurso-icon">💻</div>
+                    <h3>Repositorio GitHub</h3>
+                    <p>Explora el código fuente completo del proyecto</p>
+                </a>
+                <a href="https://figshare.com/articles/dataset/Sargassum_Segmented_Dataset/16550166?file=30598743" class="recurso-card" target="_blank">
+                    <div class="recurso-icon">📊</div>
+                    <h3>Dataset Utilizado</h3>
+                    <p>Dataset de imágenes segmentadas de sargazo recopiladas mediante ciencia ciudadana</p>
+                </a>
+                <a href="https://uvmx-my.sharepoint.com/:w:/g/personal/zs21002379_estudiantes_uv_mx/EQ5rz_gQGTFFnSw-fdeyZR0Bz6wK4l7NJAn-tIv1m1aBBw?e=HxpOwe" class="recurso-card" target="_blank">
+                    <div class="recurso-icon">📝</div>
+                    <h3>Documentación Técnica</h3>
+                    <p>Consulta la documentación detallada del proyecto</p>
+                </a>
+            </div>
+        </section>
 
         <footer class="piepagina">
             <section id="equipo" class="team-carousel">
