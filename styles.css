@@ -679,8 +679,7 @@ th {
     z-index: 1001;
     position: absolute;
     right: 1rem;
-    top: 50%;
-    transform: translateY(-50%);
+    top: 1rem;
 }
 
 .menu-toggle span {
@@ -740,6 +739,7 @@ html {
     .nav-menu {
         padding: 0.5rem 1rem;
         justify-content: space-between;
+        height: 60px;
     }
 
     .nav-container {
@@ -771,7 +771,7 @@ html {
 
     .menu-toggle {
         display: block;
-        z-index: 1001;
+        top: 1.5rem;
     }
 }
 
