@@ -28,104 +28,58 @@
                 <img src="./siclogo.jpeg" alt="Samsung Logo" class="samsung-logo">
                 <img src="./udemlogo.jpeg" alt="UDEM Logo" class="udem-logo">
             </div>
-            <h1>Proyecto Final<br>Samsung Innovation Campus</h1>
-            <div class="subtitle">Detección de sargazo en playas veracruzanas mediante técnicas de visión por computadora y redes neuronales</div>
+            <h1>Detección automática de sargazo mediante Redes Neuronales Convolucionales</h1>
+            <div class="subtitle">Proyecto Final Samsung Innovation Campus</div>
         </header>
 
         <main class="content">
+            <section class="resumen">
+                <h2>Resumen</h2>
+                <p style="text-align: justify;">En este trabajo se presenta un modelo basado en inteligencia artificial para la detección automática de sargazo en playas mediante técnicas de visión computacional y redes neuronales convolucionales (CNN). Se implementó una arquitectura U-Net para segmentación semántica, entrenada con un conjunto de imágenes georreferenciadas provenientes de Mahahual, Quintana Roo, obtenidas entre 2019 y 2021. El modelo desarrollado logró identificar y cuantificar la presencia de sargazo con alta exactitud, alcanzando métricas de desempeño destacadas como una exactitud del 91% y un índice de intersección sobre unión (IoU) promedio de 82.48% en validación. La evaluación del sistema confirmó una alta concordancia entre clases predichas y reales, destacándose una precisión específica del 92% para la clase sargazo. Los resultados obtenidos demuestran la viabilidad del enfoque propuesto para monitoreo costero automatizado, ofreciendo una alternativa escalable y efectiva frente a métodos tradicionales.</p>
+            </section>
+
+            <section class="abstract">
+                <h2>Abstract</h2>
+                <p style="text-align: justify;">This work presents an artificial intelligence-based model for the automatic detection of sargassum on the beaches, through computer vision techniques and convolutional neural networks (CNNs). A U-Net architecture was implemented for semantic segmentation, trained on a set of georeferenced images collected in Mahahual, Quintana Roo, between 2019 and 2021. The developed model successfully identified and quantified the presence of sargassum with high accuracy, achieving notable performance metrics such as 91% overall accuracy and an average Intersection over Union (IoU) of 82.48% during validation. System evaluation confirmed a high agreement between predicted and actual classes, with a class-specific precision of 92% for sargassum. The obtained results demonstrate the feasibility of the proposed approach for automated coastal monitoring, providing a scalable and effective alternative to traditional methods.</p>
+            </section>
+
+            <section class="palabras-clave">
+                <h2>Palabras Clave</h2>
+                <p>Sargazo, Redes Neuronales Convolucionales (CNN), Segmentación Semántica, Monitoreo Costero, U-Net.</p>
+            </section>
+
             <section class="introduccion">
                 <h2>I. Introducción</h2>
-                <p style="text-align: justify;">El sargazo (Sargassum spp.) es una macroalga parda que flota en las aguas tropicales y subtropicales, y cuya llegada masiva
-                a las costas —conocida como arribazón o "marea dorada"— representa un serio desafío para las autoridades ambientales y el sector turístico. 
-                Aunque esta biomasa ha sido considerada como recurso potencial para aplicaciones comerciales o energéticas, su alto contenido de contaminantes 
-                como arsénico ha generado preocupaciones ambientales y de salud pública. A esto se suma la dificultad logística y económica de su recolección y
-                disposición adecuada (Devault et al., 2021).</p>
-                <p style="text-align: justify;">En este contexto, el trabajo de Arellano-Verdejo & Lazcano-Hernández, (2021) menciona que la visión por computadora ha emergido como una herramienta clave
-                para el monitoreo automatizado del sargazo, permitiendo procesar grandes volúmenes de imágenes de manera eficiente. En particular, las redes 
-                neuronales convolucionales (CNN) han demostrado un alto desempeño en tareas de clasificación de imágenes relacionadas con la presencia o 
-                ausencia de sargazo en playas. Estas técnicas ofrecen una alternativa prometedora al monitoreo visual tradicional realizado por personas, ya que permiten generar información
-                georreferenciada con mayor rapidez, consistencia y escalabilidad.</p>
-                <p style="text-align: justify;">Como señalan Lazcano-Hernandez et al., (2023), los avances en inteligencia artificial y la incorporación de nuevas disciplinas han abierto 
-                oportunidades importantes para innovar en el monitoreo costero, un campo que continúa enfrentando retos fundamentales.</p>
-
+                <p style="text-align: justify;">El sargazo (Sargassum spp.) es una macroalga parda que flota en las aguas tropicales y subtropicales, y cuya llegada masiva a las costas —conocida como arribazón o "marea dorada"— representa un serio desafío para las autoridades ambientales y el sector turístico. Aunque esta biomasa ha sido considerada como recurso potencial para aplicaciones comerciales o energéticas, su alto contenido de contaminantes como arsénico ha generado preocupaciones ambientales y de salud pública. A esto se suma la dificultad logística y económica de su recolección y disposición adecuada (Devault et al., 2021).</p>
+                
                 <h3>1.1 Planteamiento del problema</h3>
-                <p style="text-align: justify;">La acumulación masiva de sargazo en playas del Caribe y del Golfo de México, como en Veracruz (Luis Godínez-Ortega et al., 2021), ha generado
-                afectaciones al turismo, la salud pública y los ecosistemas costeros. Sin embargo, el monitoreo en zonas costeras sigue siendo limitado, ya
-                que depende en gran medida de observaciones visuales poco sistemáticas o de tecnologías que no siempre están al alcance de las comunidades 
-                locales.</p>
-                <p style="text-align: justify;">El trabajo de Mohan & Strobl, (2024) documenta que la presencia de sargazo en las playas produce impactos negativos directos sobre la actividad turística, 
-                principalmente debido a su aspecto visual adverso y al olor desagradable que emite durante su descomposición, el cual genera molestias entre los visitantes 
-                e incrementa la proliferación de insectos. Se ha observado que, tras eventos de arribazón masiva, los turistas tienden a reducir el tiempo de permanencia en la playa 
-                o evitarla por completo, afectando la demanda de servicios locales como hospedaje, alimentos y actividades recreativas.</p>
+                <p style="text-align: justify;">La acumulación masiva de sargazo en playas del Caribe y del Golfo de México, como en Veracruz (Luis Godínez-Ortega et al., 2021), ha generado afectaciones al turismo, la salud pública y los ecosistemas costeros. Sin embargo, el monitoreo en zonas costeras sigue siendo limitado, ya que depende en gran medida de observaciones visuales poco sistemáticas o de tecnologías que no siempre están al alcance de las comunidades locales.</p>
+                <p style="text-align: justify;">El trabajo de Mohan & Strobl, (2024) documenta que la presencia de sargazo en las playas produce impactos negativos directos sobre la actividad turística, principalmente debido a su aspecto visual adverso y al olor desagradable que emite durante su descomposición, el cual genera molestias entre los visitantes e incrementa la proliferación de insectos. Se ha observado que, tras eventos de arribazón masiva, los turistas tienden a reducir el tiempo de permanencia en la playa o evitarla por completo, afectando la demanda de servicios locales como hospedaje, alimentos y actividades recreativas.</p>
 
                 <h3>1.2 Justificación</h3>
-                <p style="text-align: justify;">La aplicación de tecnologías avanzadas basadas en inteligencia artificial para el monitoreo del sargazo resulta esencial en la gestión ambiental costera. 
-                Este enfoque aporta beneficios significativos que optimizan el proceso y mejoran la toma de decisiones. Entre las ventajas clave se encuentran la capacidad 
-                de evaluar con precisión y en tiempo real la cobertura y distribución del sargazo, facilitando un seguimiento más eficiente de su dinámica.</p>
-                <p style="text-align: justify;">La automatización de este tipo de análisis también contribuye a reducir los costos operativos asociados al monitoreo tradicional, que suele requerir 
-                métodos manuales más lentos y costosos. Además, el uso de modelos basados en visión por computadora incrementa la precisión de la clasificación de imágenes, 
-                proporcionando datos valiosos que pueden ser utilizados para orientar estrategias de conservación y mitigación de los impactos ambientales.</p>
-            </section>
-
-            <section class="problema">
-                <h2>II. Planteamiento del Problema</h2>
-                <p style="text-align: justify;">La acumulación masiva de sargazo en playas del Caribe y del Golfo de México, como en Veracruz (Luis Godínez-Ortega et al., 2021), ha generado
-                    afectaciones al turismo, la salud pública y los ecosistemas costeros. Sin embargo, el monitoreo en zonas costeras sigue siendo limitado, ya
-                    que depende en gran medida de observaciones visuales poco sistemáticas o de tecnologías que no siempre están al alcance de las comunidades 
-                    locales.</p>
-                <p style="text-align: justify;">Existe la necesidad de soluciones tecnológicas más accesibles, capaces de detectar y clasificar la presencia de sargazo de manera automatizada. 
-                    En este contexto, la visión por computadora y el uso de redes neuronales ofrecen una alternativa viable y escalable para apoyar la toma de decisiones 
-                    en tiempo oportuno, con potencial para fortalecer la resiliencia local frente a este fenómeno. </p>
-            </section>
-
-            <section class="objectivos">
-                <h2>III. Objetivos</h2>
-                <p style="text-align: justify;"> Desarrollar un modelo computacional basado en segmentación semántica que permita identificar y clasificar por
-                    píxel la presencia de sargazo en imágenes de playas veracruzanas,con el fin de generar información espacial detallada que contribuya al 
-                    monitoreo costero. </p>
-                <p style="text-align: justify;">El enfoque propuesto busca facilitar la detección automatizada del sargazo mediante visión por computadora y 
-                    aprendizaje profundo, favoreciendo su implementación en contextos locales como una herramienta accesible, eficiente y escalable para la gestión
-                    ambiental.</p>
+                <p style="text-align: justify;">La aplicación de tecnologías avanzadas basadas en inteligencia artificial para el monitoreo del sargazo resulta esencial en la gestión ambiental costera. Este enfoque aporta beneficios significativos que optimizan el proceso y mejoran la toma de decisiones. Entre las ventajas clave se encuentran la capacidad de evaluar con precisión y en tiempo real la cobertura y distribución del sargazo, facilitando un seguimiento más eficiente de su dinámica.</p>
             </section>
 
             <section class="estadoarte">
                 <h2>II. Estado del Arte</h2>
-                <p style="text-align: justify;">Las macroalgas pardas flotantes de mar abierto del género Sargassum, principalmente Sargassum natans y S. fluitans, han habitado el océano Atlántico 
-                durante siglos, con registros históricos de su presencia en costas mexicanas como Veracruz. No obstante, desde 2011 se ha observado un incremento atípico 
-                en su proliferación, extendiéndose desde África occidental hasta el Gran Caribe y el Golfo de México.</p>
-                <p style="text-align: justify;">El trabajo de Vasquez et al., (2022) propone estimar el nivel de acumulación de Sargassum en playas mediante fotografías tomadas con teléfonos inteligentes. 
-                Esta estrategia permite realizar evaluaciones rápidas y de bajo costo a partir de imágenes accesibles. Para lograr lo anterior, se construyó un conjunto de datos 
-                con más de mil imágenes recolectadas de redes sociales, clasificadas en cinco niveles de acumulación: ninguno, bajo, moderado, abundante y excesivo.</p>
-                <p style="text-align: justify;">Entre los enfoques más avanzados para la detección de Sargassum destaca el trabajo de Laval et al., (2023), quienes desarrollaron modelos de aprendizaje 
-                profundo basados en redes neuronales convolucionales aplicados a imágenes satelitales provenientes de los sensores MSI (Sentinel-2) y OLCI (Sentinel-3).</p>
+                <p style="text-align: justify;">Las macroalgas pardas flotantes de mar abierto del género Sargassum, principalmente Sargassum natans y S. fluitans, han habitado el océano Atlántico durante siglos, con registros históricos de su presencia en costas mexicanas como Veracruz. No obstante, desde 2011 se ha observado un incremento atípico en su proliferación, extendiéndose desde África occidental hasta el Gran Caribe y el Golfo de México.</p>
+                <p style="text-align: justify;">El trabajo de Vasquez et al., (2022) propone estimar el nivel de acumulación de Sargassum en playas mediante fotografías tomadas con teléfonos inteligentes. Esta estrategia permite realizar evaluaciones rápidas y de bajo costo a partir de imágenes accesibles. Para lograr lo anterior, se construyó un conjunto de datos con más de mil imágenes recolectadas de redes sociales, clasificadas en cinco niveles de acumulación: ninguno, bajo, moderado, abundante y excesivo.</p>
             </section>
 
             <section id="metodologia" class="metodologia">
                 <h2>III. Metodología</h2>
-                <p style="text-align: justify;">La metodología se estructura en tres etapas principales: preparación de datos, entrenamiento del modelo de segmentación y evaluación del sistema de 
-                detección de sargazo. El enfoque adoptado se basa en técnicas de procesamiento digital de imágenes orientadas a la identificación de patrones visuales 
-                relacionados con la presencia de sargazo en ambientes costeros.</p>
+                <p style="text-align: justify;">La metodología se estructura en tres etapas principales: preparación de datos, entrenamiento del modelo de segmentación y evaluación del sistema de detección de sargazo. El enfoque adoptado se basa en técnicas de procesamiento digital de imágenes orientadas a la identificación de patrones visuales relacionados con la presencia de sargazo en ambientes costeros.</p>
 
                 <h3>3.1 Recopilación y preprocesamiento de datos</h3>
-                <p style="text-align: justify;">Se emplea un conjunto de imágenes georreferenciadas correspondientes a la localidad de Mahahual, Quintana Roo, obtenidas mediante crowdsourcing a 
-                través de la plataforma Collective View, durante el periodo comprendido entre septiembre de 2019 y agosto de 2021. Estas imágenes han sido previamente 
-                segmentadas mediante un modelo Pix2Pix, generando máscaras de anotación con clases diferenciadas, lo que permite utilizarlas directamente para tareas 
-                de segmentación semántica supervisada.</p>
-                <p style="text-align: justify;">Con el objetivo de preservar la información visual necesaria para la detección precisa de patrones, las imágenes se mantienen en formato RGB. 
-                Posteriormente, se redimensionan a una resolución uniforme de 256x256 píxeles y se normalizan para su uso como entrada en el modelo de red neuronal.</p>
+                <p style="text-align: justify;">Se emplea un conjunto de imágenes georreferenciadas correspondientes a la localidad de Mahahual, Quintana Roo, obtenidas mediante crowdsourcing a través de la plataforma Collective View, durante el periodo comprendido entre septiembre de 2019 y agosto de 2021. Estas imágenes han sido previamente segmentadas mediante un modelo Pix2Pix, generando máscaras de anotación con clases diferenciadas, lo que permite utilizarlas directamente para tareas de segmentación semántica supervisada.</p>
 
                 <h3>3.2 Desarrollo del sistema de clasificación</h3>
-                <p style="text-align: justify;">Sobre cada imagen se extraen medidas estadísticas de primer orden, incluyendo el valor mínimo, máximo, promedio y la desviación estándar de los niveles 
-                de gris. Estos parámetros se almacenan en una estructura matricial, la cual constituye la base para el proceso de clasificación. La clasificación se realiza 
-                mediante una función de decisión definida a partir del análisis exploratorio del conjunto de datos.</p>
-                <p style="text-align: justify;">El sistema se implementa mediante una arquitectura de red neuronal convolucional, utilizando bibliotecas especializadas en aprendizaje profundo como 
-                TensorFlow y Keras. Se entrena un modelo de segmentación semántica capaz de identificar regiones con presencia de sargazo, empleando métricas específicas 
-                como el IoU para evaluar el desempeño del modelo.</p>
+                <p style="text-align: justify;">El sistema se implementa mediante una arquitectura de red neuronal convolucional basada en el modelo U-Net, utilizando bibliotecas especializadas en aprendizaje profundo como TensorFlow y Keras. Sobre cada imagen se extraen medidas estadísticas de primer orden, incluyendo el valor mínimo, máximo, promedio y la desviación estándar de los niveles de gris.</p>
             </section>
 
             <section id="resultados" class="resultados">
                 <h2>IV. Resultados</h2>
-                <p style="text-align: justify;">Los resultados del modelo demuestran una efectividad significativa en la clasificación de píxeles, con métricas de precisión superiores al 90% y un Intersection over Union (IoU) cercano al 85%. Las métricas finales del modelo en el conjunto de prueba muestran:</p>
+                <p style="text-align: justify;">Durante el proceso de entrenamiento se monitorean métricas cuantitativas para evaluar el comportamiento del modelo. Se observa una disminución sostenida de la pérdida, acompañada de un incremento progresivo del desempeño en ambas métricas principales, sin que se presenten signos evidentes de sobreajuste.</p>
                 
                 <div class="metricas-container">
                     <div class="metrica-item">
@@ -134,21 +88,33 @@
                     </div>
                     <div class="metrica-item">
                         <h3>Precisión (Accuracy)</h3>
-                        <p>85.13%</p>
+                        <p>91.45%</p>
                     </div>
                     <div class="metrica-item">
                         <h3>Mean IoU</h3>
-                        <p>73.13%</p>
+                        <p>82.48%</p>
                     </div>
                 </div>
 
                 <div class="resultados-preliminares">
-                    <h3>Resultados del Dataset</h3>
+                    <h3>Resultados del Modelo</h3>
                     <div class="resultados-imagen-container">
-                        <img src="./ResultadosPreliminaresDataset.jpg" alt="Resultados del Dataset" class="resultados-imagen">
+                        <img src="./Fig1_InputMask.jpg" alt="Imagen de entrada y máscara segmentada" class="resultados-imagen" style="width: 80%; max-width: 800px;">
+                        <img src="./Fig2_MetricsEvolution.jpg" alt="Evolución de métricas" class="resultados-imagen" style="width: 80%; max-width: 800px;">
+                        <img src="./Fig3_ConfusionMatrix.jpg" alt="Matriz de confusión" class="resultados-imagen" style="width: 80%; max-width: 800px;">
+                        <img src="./Fig4_ResultsVisualization.jpg" alt="Visualización de resultados" class="resultados-imagen" style="width: 80%; max-width: 800px;">
                         <div class="interpretacion-resultados">
                             <h4>Interpretación de los Resultados:</h4>
-                            <p style="text-align: justify;">Las imágenes muestran el rendimiento del modelo en la segmentación de sargazo. En cada fila se presentan tres elementos:</p>
+                            <p style="text-align: justify;">El entrenamiento se estabiliza mediante el ajuste dinámico de la tasa de aprendizaje con ReduceLROnPlateau y la restauración de pesos con base en la mejor época validada. Estas estrategias contribuyen a mejorar la capacidad de generalización del modelo.</p>
+                            
+                            <p style="text-align: justify;">En la evaluación sobre el conjunto de prueba, se observa una alta concordancia entre las clases predichas y las verdaderas:</p>
+                            <ul>
+                                <li><strong>Clase Sargazo (Clase 1):</strong> 92% de precisión</li>
+                                <li><strong>Clase Arena (Clase 0):</strong> 85% de precisión</li>
+                                <li><strong>Clase Otros (Clase 2):</strong> 94% de precisión</li>
+                            </ul>
+
+                            <p style="text-align: justify;">Las imágenes muestran el rendimiento del modelo en la segmentación de sargazo:</p>
                             <ul>
                                 <li><strong>Imagen de Entrada:</strong> La fotografía original de la playa con presencia de sargazo.</li>
                                 <li><strong>Máscara Real:</strong> La segmentación manual realizada por expertos, donde:
@@ -160,10 +126,21 @@
                                 </li>
                                 <li><strong>Máscara Predicha:</strong> La segmentación generada por nuestro modelo, utilizando el mismo esquema de colores.</li>
                             </ul>
-                            <p style="text-align: justify;">El modelo logra una segmentación precisa, identificando correctamente las áreas con sargazo y diferenciándolas de la arena y otros elementos del entorno. La comparación entre las máscaras reales y predichas muestra una alta coincidencia en la delimitación de las diferentes clases, lo que valida la efectividad del modelo para esta tarea de segmentación.</p>
                         </div>
                     </div>
                 </div>
+            </section>
+
+            <section class="discusion">
+                <h2>V. Discusión y Conclusiones</h2>
+                <p style="text-align: justify;">El modelo propuesto mostró una efectividad significativa en la detección automática de sargazo, lo que confirma la idoneidad de las redes neuronales convolucionales en aplicaciones ambientales. La implementación de una arquitectura U-Net permitió lograr segmentaciones precisas y consistentes, incluso en escenarios visualmente complejos.</p>
+                <p style="text-align: justify;">No obstante, se identificaron limitaciones relacionadas con la calidad y diversidad del conjunto de datos, especialmente en situaciones con bajo contraste visual o colores similares al sargazo. Por ello, futuras investigaciones podrían centrarse en ampliar el conjunto de datos, considerando diversas condiciones ambientales y privilegiando la creación de un conjunto de datos específico para playas de Veracruz, incrementando así la robustez del modelo y su relevancia local.</p>
+                <p style="text-align: justify;">Finalmente, se concluye que el sistema desarrollado constituye una herramienta tecnológica prometedora para la gestión ambiental costera, capaz de proporcionar información precisa y oportuna que facilite decisiones operativas.</p>
+            </section>
+
+            <section class="agradecimientos">
+                <h2>Agradecimientos</h2>
+                <p style="text-align: justify;">Se extienden agradecimientos por el apoyo en la orientación de la realización de este proyecto por parte de Samsung Innovation Campus y la Universidad de México (UDEM).</p>
             </section>
         </main>
 

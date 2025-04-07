@@ -30,12 +30,9 @@ body {
 
 /* Estilos del encabezado principal */
 .header {
-    padding: 2rem;
+    padding: 1rem;
     text-align: center;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     margin-bottom: 2rem;
-    position: relative;
-    z-index: 1;
 }
 
 /* Contenedor de logos */
@@ -56,13 +53,14 @@ body {
 
 /* Título principal con efecto de gradiente */
 h1 {
-    font-size: 3.5rem;
+    font-size: 3rem;
+    margin: 1.5rem 0;
+    line-height: 1.3;
     font-weight: 700;
-    margin-bottom: 1.5rem;
     background: linear-gradient(45deg, var(--samsung-white), #a0a0a0);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    line-height: 1.2;
+    padding: 0 1rem;
 }
 
 h1 br {
@@ -73,12 +71,8 @@ h1 br {
 
 /* Subtítulo del documento */
 .subtitle {
-    font-size: 1.5rem;
-    color: #a0a0a0;
-    max-width: 800px;
-    margin: 0 auto 3rem;
-    padding: 0 1rem;
-    transition: opacity 0.3s ease;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
 }
 
 .authors {
@@ -146,8 +140,12 @@ h1 br {
 .content {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 4rem 2rem;
-    padding-top: 2rem;
+    padding: 2rem;
+}
+
+.resumen {
+    margin-top: 4rem;
+    padding-top: 1rem;
 }
 
 /* Estilos de las secciones */
@@ -326,9 +324,9 @@ th {
 
 @media (max-width: 768px) {
     h1 {
-        font-size: 2rem;
-        margin-bottom: 1.5rem;
-        line-height: 1.3;
+        font-size: 1.5rem;
+        margin: 0.5rem 0;
+        padding: 0 1rem;
     }
 
     h1 br {
@@ -336,16 +334,13 @@ th {
     }
     
     .subtitle {
-        font-size: 1.1rem;
-        margin-bottom: 2rem;
-        line-height: 1.4;
+        font-size: 1rem;
+        margin-bottom: 3rem;
     }
     
     .header {
-        padding: 1.5rem 1rem;
-        margin-bottom: 1rem;
-        margin-top: 60px;
-        padding-top: 1.5rem;
+        padding: 0.5rem;
+        margin-bottom: 3rem;
     }
 
     .logo-container {
@@ -358,7 +353,6 @@ th {
     
     .content {
         padding: 1rem;
-        padding-top: 1rem;
     }
     
     section {
@@ -943,17 +937,18 @@ html {
 .resultados-imagen-container {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
     align-items: center;
+    gap: 20px;
+    margin: 20px 0;
 }
 
 .resultados-imagen {
-    width: 100%;
-    max-width: 800px;
+    max-width: 100%;
     height: auto;
+    object-fit: contain;
+    margin: 10px 0;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .resultados-imagen:hover {
@@ -1030,4 +1025,16 @@ html {
 .notastabla {
     font-size: 0.8rem;
     padding: 0.5rem;
+}
+
+@media (min-width: 768px) {
+    .resultados-imagen {
+        max-width: 80%;
+    }
+}
+
+@media (min-width: 1024px) {
+    .resultados-imagen {
+        max-width: 70%;
+    }
 } 
