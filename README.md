@@ -54,7 +54,3 @@ El modelo propuesto demostró efectividad significativa en la detección automá
 - Victor Daniel Moreno Luna
 - Brandon Josafat Mota López
 - Alexis Rivera Merlin
-
-### Proyecto desarrollado para:
-![Samsung](https://img.shields.io/badge/Samsung-1428A0?style=for-the-badge&logo=samsung&logoColor=white)
-![UDEM](https://img.shields.io/badge/Universidad_de_México-blue?style=for-the-badge)
