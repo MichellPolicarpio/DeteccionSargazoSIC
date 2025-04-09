@@ -5,7 +5,7 @@
 ### Descripción del Proyecto
 Este proyecto desarrolla un modelo basado en inteligencia artificial para la detección automática de sargazo en playas mediante técnicas de visión computacional y redes neuronales convolucionales (CNN), implementando una arquitectura U-Net para segmentación semántica.
 
-### [Ver Notebook del Proyecto](https://colab.research.google.com/drive/1F9jBLcWd1ITPgZSNDlnn7EnJUWNGxWPB?usp=sharing)
+### [Ver Web explicativa del Proyecto](https://michellpolicarpio.github.io/DeteccionSargazoSIC/)
 
 ### Problema Abordado 🏖️
 La acumulación masiva de sargazo en las playas del Caribe y Golfo de México genera impactos negativos en:
