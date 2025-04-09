@@ -42,7 +42,7 @@ Desarrollar un sistema que permita:
 ### Recursos Adicionales
 - [Repositorio GitHub](https://github.com/MichellPolicarpio/DeteccionSargazoSIC/)
 - [Dataset Utilizado](https://figshare.com/articles/dataset/Sargassum_Segmented_Dataset/16550166?file=30598743)
-- [Documentación Técnica](https://uvmx-my.sharepoint.com/:w:/g/personal/zs21002379_estudiantes_uv_mx/EQ5rz_gQGTFFnSw-fdeyZR0Bz6wK4l7NJAn-tIv1m1aBBw?e=HxpOwe)
+- [Documentación Técnica](https://uvmx-my.sharepoint.com/:b:/g/personal/zs21002379_estudiantes_uv_mx/ETTRX30vakNDkzd_f5WmRi8BQmVRtDtcMESGTQP1jSIEZQ?e=KRpNdc)
 
 ### Conclusiones
 El modelo propuesto demostró efectividad significativa en la detección automática de sargazo, confirmando la idoneidad de las CNNs en aplicaciones ambientales. Futuras investigaciones podrían ampliar el conjunto de datos con diversas condiciones ambientales y crear datasets específicos para playas de Veracruz.
