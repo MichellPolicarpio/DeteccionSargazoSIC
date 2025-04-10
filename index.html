@@ -71,7 +71,7 @@
                 <h3>3.2 Preprocesamiento de Imágenes</h3>
                 <p>El preprocesamiento de las imágenes se realizó manteniendo los tres canales RGB para preservar la información de color, lo que es crucial para la detección de sargazo. Las imágenes se redimensionaron a un tamaño uniforme de 256x256 píxeles para garantizar consistencia en el entrenamiento. Además, se normalizaron dividiendo los valores de píxeles por 255 para obtener valores entre 0 y 1, lo que ayuda a la convergencia del modelo durante el entrenamiento.</p>
 
-                <h3>3.3 Desarrollo del sistema de clasificación</h3>
+                <h3>3.3 Implementación y Entrenamiento de la U-Net</h3>
                 <p style="text-align: justify;">El sistema se implementa mediante una arquitectura de red neuronal convolucional basada en el modelo U-Net, utilizando bibliotecas especializadas en aprendizaje profundo como TensorFlow y Keras. El conjunto de datos de aproximadamente 1000 imágenes se dividió en un 80% para entrenamiento y 20% para validación. La arquitectura U-Net, conocida por su efectividad en tareas de segmentación, procesa las imágenes manteniendo su estructura espacial y preservando los detalles finos mediante conexiones entre capas. Un aspecto clave del entrenamiento fue el uso de imágenes previamente segmentadas mediante el modelo Pix2Pix, lo que permitió implementar un aprendizaje supervisado efectivo, donde el modelo aprendió a identificar patrones visuales del sargazo a partir de las máscaras de segmentación proporcionadas.</p>
             </section>
 
