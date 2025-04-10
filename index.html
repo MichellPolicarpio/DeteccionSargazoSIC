@@ -63,13 +63,16 @@
 
             <section id="metodologia" class="metodologia">
                 <h2>III. Metodología</h2>
-                <p style="text-align: justify;">La metodología se estructura en tres etapas principales: preparación de datos, entrenamiento del modelo de segmentación y evaluación del sistema de detección de sargazo. El enfoque adoptado se basa en técnicas de procesamiento digital de imágenes orientadas a la identificación de patrones visuales relacionados con la presencia de sargazo en ambientes costeros.</p>
+                <p style="text-align: justify;">La metodología se estructura en tres etapas principales: recopilación de datos, preprocesamiento de imágenes y desarrollo del sistema de clasificación. El enfoque se basa en técnicas de aprendizaje profundo para la segmentación semántica de sargazo, utilizando un conjunto de imágenes previamente anotadas y procesadas.</p>
 
                 <h3>3.1 Recopilación y preprocesamiento de datos</h3>
                 <p style="text-align: justify;">Se emplea un conjunto de imágenes georreferenciadas correspondientes a la localidad de Mahahual, Quintana Roo, obtenidas mediante crowdsourcing a través de la plataforma Collective View, durante el periodo comprendido entre septiembre de 2019 y agosto de 2021. Estas imágenes han sido previamente segmentadas mediante un modelo Pix2Pix, generando máscaras de anotación con clases diferenciadas, lo que permite utilizarlas directamente para tareas de segmentación semántica supervisada.</p>
 
-                <h3>3.2 Desarrollo del sistema de clasificación</h3>
-                <p style="text-align: justify;">El sistema se implementa mediante una arquitectura de red neuronal convolucional basada en el modelo U-Net, utilizando bibliotecas especializadas en aprendizaje profundo como TensorFlow y Keras. Sobre cada imagen se extraen medidas estadísticas de primer orden, incluyendo el valor mínimo, máximo, promedio y la desviación estándar de los niveles de gris.</p>
+                <h3>3.2 Preprocesamiento de Imágenes</h3>
+                <p>El preprocesamiento de las imágenes se realizó manteniendo los tres canales RGB para preservar la información de color, lo que es crucial para la detección de sargazo. Las imágenes se redimensionaron a un tamaño uniforme de 256x256 píxeles para garantizar consistencia en el entrenamiento. Además, se normalizaron dividiendo los valores de píxeles por 255 para obtener valores entre 0 y 1, lo que ayuda a la convergencia del modelo durante el entrenamiento.</p>
+
+                <h3>3.3 Desarrollo del sistema de clasificación</h3>
+                <p style="text-align: justify;">El sistema se implementa mediante una arquitectura de red neuronal convolucional basada en el modelo U-Net, utilizando bibliotecas especializadas en aprendizaje profundo como TensorFlow y Keras. El conjunto de datos de aproximadamente 1000 imágenes se dividió en un 80% para entrenamiento y 20% para validación. La arquitectura U-Net, conocida por su efectividad en tareas de segmentación, procesa las imágenes manteniendo su estructura espacial y preservando los detalles finos mediante conexiones entre capas. Un aspecto clave del entrenamiento fue el uso de imágenes previamente segmentadas mediante el modelo Pix2Pix, lo que permitió implementar un aprendizaje supervisado efectivo, donde el modelo aprendió a identificar patrones visuales del sargazo a partir de las máscaras de segmentación proporcionadas.</p>
             </section>
 
             <section id="resultados" class="resultados">
@@ -80,14 +83,50 @@
                     <div class="metrica-item">
                         <h3>Pérdida (Loss)</h3>
                         <p>0.3822</p>
+                        <div class="tooltip">
+                            <button class="info-btn">ℹ️</button>
+                            <div class="tooltip-content">
+                                <h4>Pérdida (Loss)</h4>
+                                <p>La pérdida (loss) es una medida que indica qué tan bien está funcionando el modelo durante el entrenamiento. Un valor de 0.3822 es muy bueno porque:</p>
+                                <ul>
+                                    <li>Indica que el modelo está aprendiendo correctamente</li>
+                                    <li>Muestra que las predicciones están muy cerca de los valores reales</li>
+                                    <li>Un valor bajo de pérdida significa que el modelo está generalizando bien</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                     <div class="metrica-item">
                         <h3>Precisión (Accuracy)</h3>
                         <p>91.45%</p>
+                        <div class="tooltip">
+                            <button class="info-btn">ℹ️</button>
+                            <div class="tooltip-content">
+                                <h4>Precisión (Accuracy)</h4>
+                                <p>La precisión del 91.45% es excelente porque:</p>
+                                <ul>
+                                    <li>Indica que el modelo clasifica correctamente más del 90% de los casos</li>
+                                    <li>Es superior al umbral comúnmente aceptado del 85% para modelos de segmentación</li>
+                                    <li>Demuestra que el modelo es altamente confiable para la detección de sargazo</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                     <div class="metrica-item">
                         <h3>Mean IoU</h3>
                         <p>82.48%</p>
+                        <div class="tooltip">
+                            <button class="info-btn">ℹ️</button>
+                            <div class="tooltip-content">
+                                <h4>Mean IoU (Intersección sobre Unión)</h4>
+                                <p>El Mean IoU del 82.48% es muy bueno porque:</p>
+                                <ul>
+                                    <li>Mide la precisión de la segmentación superpuesta</li>
+                                    <li>Un valor superior al 80% indica una excelente coincidencia entre las predicciones y las máscaras reales</li>
+                                    <li>Demuestra que el modelo puede identificar con precisión los límites del sargazo</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -218,7 +257,6 @@
             </div>
         </footer>
     </section>
-
     <script src="script.js"></script>
 </body>
 </html> 

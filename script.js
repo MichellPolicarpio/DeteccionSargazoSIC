@@ -193,7 +193,7 @@ document.addEventListener('DOMContentLoaded', () => {
         autoplayTimer = setInterval(moveCarousel, autoplayInterval);
     });
 
-    // Soporte táctil simplificado
+    // Soporte táctil 
     let touchStartX = 0;
     let touchEndX = 0;
 
