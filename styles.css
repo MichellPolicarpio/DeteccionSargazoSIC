@@ -775,11 +775,16 @@ html {
     padding-top: 2rem;
 }
 
+/* Estilos para la sección de agradecimientos */
+.agradecimientos {
+    margin-bottom: 1rem;
+}
+
 /* Estilos para la sección de recursos adicionales */
 .recursos-adicionales {
-    padding: 4rem 2rem;
+    padding: 2rem 2rem;
     background: rgba(255, 255, 255, 0.02);
-    margin-top: 2rem;
+    margin-top: 1rem;
 }
 
 .recursos-adicionales h2 {
