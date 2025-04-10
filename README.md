@@ -1,6 +1,4 @@
-# 🌊 Detección Automatizada de Sargazo en Playas Veracruzanas
-
-## Proyecto de Inteligencia Artificial para Deteccion de Sargazo con Redes Neuronales
+# 🌊 Detección de sargazo mediante Redes Neuronales Convolucionales: Un enfoque de segmentación semantica
 
 ### Descripción del Proyecto
 
