@@ -58,14 +58,8 @@ El proyecto contribuye a:
 - Desarrollar soluciones tecnológicas accesibles
 - Fortalecer la resiliencia local ante fenómenos costeros
 
-### Colaboración
-
-![Samsung](https://img.shields.io/badge/Samsung-1428A0?style=for-the-badge&logo=samsung&logoColor=white)
-![UDEM](https://img.shields.io/badge/Universidad-Desarrollo%20Empresarial-blue?style=for-the-badge)
-
-Proyecto desarrollado para las siguientes instituciones:
+Proyecto desarrollado para:
 - Samsung Innovation Campus
-- Universidad de México (UDEM)
 
 ### Autores 👥
 
@@ -75,6 +69,3 @@ Proyecto desarrollado para las siguientes instituciones:
 - Moreno Luna Victor Daniel
 - Mota López Brandon Josafat
 - Rivera Merlin Alexis
-
-### Licencia
-© 2025 Samsung Innovation Campus - UDEM
