@@ -3,7 +3,7 @@
 ## Descripción del Proyecto
 Este proyecto implementa un modelo basado en inteligencia artificial para la detección automática de sargazo en playas mediante técnicas de visión computacional y redes neuronales convolucionales (CNN). Utilizando una arquitectura U-Net para segmentación semántica, el sistema logra identificar y cuantificar la presencia de sargazo con alta precisión.
 
-### Link de visualización del reporte
+### Link de visualización del reporte web
 https://michellpolicarpio.github.io/DeteccionSargazoSIC/
 
 ## Problema Abordado 🏖️
